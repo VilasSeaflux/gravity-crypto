@@ -10,7 +10,6 @@ type Props = {
 	plus?: boolean;
 	dollar?: boolean;
 	tenative?: boolean;
-	isTransparent?: boolean;
 };
 export default function AboutBox({
 	about,
@@ -19,28 +18,12 @@ export default function AboutBox({
 	plus = false,
 	dollar = false,
 	tenative = false,
-	isTransparent = false,
 }: Props) {
 	const divRef = useRef(null);
-	// useGSAP(() => {
-	// 	gsap.from(divRef.current, {
-	// 		opacity: 0,
-	// 		scale: 0,
-	// 		duration: 2,
-	// 		scrollTrigger: {
-	// 			trigger: "#scroll",
-	// 			scrub: true,
-	// 			markers: true,
-	// 			start: "top 80%",
-	// 			end: "bottom 20%",
-	// 			pin: true,
-	// 		},
-	// 	});
-	// });
 	return (
 		<div
 			ref={divRef}
-			className={`flex flex-col justify-center items-center gap-y-2 ${isTransparent ? "bg-transparent" : "bg-primary-black"} p-10 w-full h-full`}
+			className="flex flex-col justify-center items-center gap-y-2 bg-primary-black hover:bg-transparent p-10 w-full h-full hover:transform hover:transition-transform hover:duration-1000"
 		>
 			<div className="text-center">
 				{tenative && <span className="text-3xl text-white">~</span>}

@@ -17,7 +17,6 @@ const data = [
 		title: "%",
 		number: 0.8,
 		about: "of the global crypto spot trading volume",
-		isTransparent: true,
 	},
 	{
 		number: 30,
@@ -55,18 +54,29 @@ const data = [
 	},
 ];
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerEffect(ScrollTrigger);
 export default function AboutSecton() {
 	useGSAP(() => {
-		gsap.to("#p", {
-			opacity: 1,
-			scale: 1,
-			duration: 3,
+		gsap.from("#about-heading", {
+			opacity: 0,
+			scale: 0,
+			duration: 1,
 			scrollTrigger: {
-				trigger: "#p",
-				scrub: true,
+				trigger: "#about-heading",
 				markers: true,
-				end: "bottom 50%",
+				start: "top 100%",
+				end: "top 50%",
+			},
+		});
+		gsap.from("#para", {
+			delay: 0.5,
+			opacity: 0,
+			scale: 0,
+			duration: 1,
+			scrollTrigger: {
+				trigger: "#about-heading",
+				markers: true,
+				start: "top 100%",
+				end: "top 50%",
 			},
 		});
 	});
@@ -75,13 +85,13 @@ export default function AboutSecton() {
 			id="about"
 			className="flex flex-col justify-center items-center gap-y-10 w-screen h-screen"
 		>
-			<h1 className="font-light font-meta text-7xl text-center text-white">
+			<h1
+				id="about-heading"
+				className="font-light font-meta text-7xl text-center text-white"
+			>
 				About Gravity Team
 			</h1>
-			<p
-				id="p"
-				className="opacity-0 w-1/2 text-2xl text-center text-white scale-0"
-			>
+			<p id="para" className="w-1/2 text-2xl text-center text-white">
 				At Gravity Team, we are on the mission to balance the supply and demand
 				across crypto markets worldwide. We are a crypto native market maker
 				founded by traders, developers, and innovators who are strong believers
@@ -97,7 +107,6 @@ export default function AboutSecton() {
 						dollar={item.dollar}
 						tenative={item.tenative}
 						plus={item.plus}
-						isTransparent={item.isTransparent}
 					/>
 				))}
 			</div>
