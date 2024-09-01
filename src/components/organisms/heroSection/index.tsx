@@ -16,16 +16,22 @@ export default function HeroSection() {
 			ease: "elastic.inOut",
 		});
 		timeline.from("#intro", {
-			duration: 1,
+			duration: 0.7,
 			opacity: 0,
 			y: 100,
 			ease: "sine.out",
 		});
 		timeline.from("#get-in-touch", {
-			duration: 1,
+			duration: 0.6,
 			opacity: 0,
 			y: 100,
 			ease: "sine.out",
+		});
+		timeline.from("#hero-animation", {
+			duration: 1,
+			opacity: 0,
+			ease: "sine.out",
+			translateZ: 180,
 		});
 	});
 	return (
@@ -53,6 +59,7 @@ export default function HeroSection() {
 				autoPlay
 				loop
 				muted
+				id="hero-animation"
 			>
 				<source src={"/animation/hero-animation.mp4"} type="video/mp4" />
 			</video>

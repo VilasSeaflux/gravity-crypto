@@ -62,8 +62,7 @@ export default function AboutSecton() {
 			duration: 1,
 			scrollTrigger: {
 				trigger: "#about-heading",
-				markers: true,
-				start: "top 100%",
+				start: "top 70%",
 				end: "top 50%",
 			},
 		});
@@ -73,9 +72,8 @@ export default function AboutSecton() {
 			scale: 0,
 			duration: 1,
 			scrollTrigger: {
-				trigger: "#about-heading",
-				markers: true,
-				start: "top 100%",
+				trigger: "#para",
+				start: "top 80%",
 				end: "top 50%",
 			},
 		});

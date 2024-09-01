@@ -20,6 +20,19 @@ export default function AboutBox({
 	tenative = false,
 }: Props) {
 	const divRef = useRef(null);
+	useGSAP(() => {
+		gsap.from(divRef.current, {
+			opacity: 0,
+			duration: 2,
+			stagger: 2,
+			scrollTrigger: {
+				trigger: divRef.current,
+				scroller: "body",
+				start: "top 90%",
+				markers: true,
+			},
+		});
+	});
 	return (
 		<div
 			ref={divRef}
