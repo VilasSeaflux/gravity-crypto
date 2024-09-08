@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { metaverse } from "./fonts";
 
 const config: Config = {
 	content: [
@@ -16,13 +15,36 @@ const config: Config = {
 			},
 			colors: {
 				"primary-black": "#141619",
+				"primary-slate": "#415572",
+				"secondary-slate": "#1B1B1E",
 			},
 			fontFamily: {
 				meta: ["var(--font-metaverse)"],
 				inter: ["var(--font-inter)"],
 			},
+			maskImage: {
+				"blur-mask":
+					"linear-gradient(to bottom, transparent, black 30%, black 80%, transparent)",
+			},
+			webkitMaskImage: {
+				"blur-mask":
+					"linear-gradient(to bottom, transparent, black 30%, black 80%, transparent)",
+			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		({ addUtilities }: { addUtilities: any }) => {
+			const newUtilities = {
+				".mask-blur": {
+					maskImage:
+						"linear-gradient(to bottom, transparent, black 30%, black 80%, transparent)",
+					WebkitMaskImage:
+						"linear-gradient(to bottom, transparent, black 30%, black 80%, transparent)",
+				},
+			};
+			addUtilities(newUtilities, ["responsive", "hover"]);
+		},
+	],
 };
 export default config;

@@ -2,6 +2,7 @@
 import AboutSecton from "@/components/organisms/aboutSection";
 import HeroSection from "@/components/organisms/heroSection";
 import Navbar from "@/components/organisms/navbar";
+import Partners from "@/components/organisms/partners";
 
 export default function Home() {
 	return (
@@ -9,6 +10,7 @@ export default function Home() {
 			<Navbar />
 			<HeroSection />
 			<AboutSecton />
+			<Partners />
 		</main>
 	);
 }

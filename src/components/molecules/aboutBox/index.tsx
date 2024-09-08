@@ -29,14 +29,13 @@ export default function AboutBox({
 				trigger: divRef.current,
 				scroller: "body",
 				start: "top 90%",
-				markers: true,
 			},
 		});
 	});
 	return (
 		<div
 			ref={divRef}
-			className="flex flex-col justify-center items-center gap-y-2 bg-primary-black hover:bg-transparent p-10 w-full h-full hover:transform hover:transition-transform hover:duration-1000"
+			className="flex flex-col justify-center items-center gap-y-2 bg-primary-black hover:bg-transparent p-10 w-full h-full min-h-[30vh] hover:transform hover:transition-transform hover:duration-1000"
 		>
 			<div className="text-center">
 				{tenative && <span className="text-3xl text-white">~</span>}

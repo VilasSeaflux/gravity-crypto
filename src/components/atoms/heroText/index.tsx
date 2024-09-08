@@ -12,13 +12,13 @@ export default function HeroText({
 				.split("")
 				.map((char, index) => {
 					if (index === 9) {
-						return <br key={char} />;
+						return <br key={`${char}_${index + 1}`} />;
 					}
 					if (index === 16) {
-						return <span key={char}>&nbsp;</span>;
+						return <span key={`${char}_${index + 1}`}>&nbsp;</span>;
 					}
 					return (
-						<span className="b" key={char}>
+						<span className="b" key={`${char}_${index + 1}`}>
 							{char}
 						</span>
 					);
